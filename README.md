@@ -23,22 +23,30 @@ Mobil / Car hanya dapat menyala jika kita sudah menutup pintu , mengunci pintu, 
 
 '''
 public void toggleStartEngineButton()
+
         {
             if (!doorIsClose())
+            
             {
                 this.callbackCarEngineStatusChanged.carEngineStatusChanged("STOPPED", "door is open");
                 return;
             }
+            
             if (!doorIsLocked())
+            
             {
                 this.callbackCarEngineStatusChanged.carEngineStatusChanged("STOPPED", "door is unlocked");
                 return;
             }
+            
             if (!powerIsReady())
+            
             {
                 this.callbackCarEngineStatusChanged.carEngineStatusChanged("STOPPED", "no power available");
                 return;
             }
+            
             this.callbackCarEngineStatusChanged.carEngineStatusChanged("STARTED", "Engine Started");
+            
         }
  '''
